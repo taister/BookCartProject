@@ -15,6 +15,12 @@ class ShoppingCartPage:
         self.cart_container = self.page.locator("mat-card-content table")
         self.cart_item_links = self.cart_container.locator("a[href^='/books/details']")
 
+        # Locator to remove product from cart
+        self.cart_remove_item = page.get_by_role("row", name="Harry Potter and the Chamber").get_by_role("button").nth(2)
+
+
+
+
     def navigate_to_homepage(self):
         self.page.goto("https://bookcart.azurewebsites.net/")
         self.page.wait_for_load_state("networkidle")
@@ -42,3 +48,11 @@ class ShoppingCartPage:
 
         # Check if expected title is found in any product title (case-insensitive)
         return any(expected_title.lower() in title.lower() for title in product_titles)
+
+    def click_remove_product_from_cart(self):
+        # Remove product from cart
+        self.page.wait_for_load_state("networkidle")
+        self.cart_remove_item.wait_for(state="visible", timeout=5000)
+        self.cart_remove_item.click()
+
+

@@ -35,7 +35,7 @@ def open_homepage(login_page):
 def click_login_button(login_page):
     login_page.click_home_login_button()
 
-@then('Enter username "Teejay1" and password "Teejay8x"')
+@then('Enter username "{username}" and password "{password}"')
 def enter_credentials(login_page):
     login_page.enter_credentials("Teejay1", "Teejay8x")
 

@@ -1,0 +1,11 @@
+[
+  {  "username": "Teejay1",
+    "password": "Teejay8x",
+    "expected_result": "success"
+  },
+{
+   "username": "invalid_user",
+    "password": "wrongpass123",
+    "expected_result": "error" 
+}
+]
