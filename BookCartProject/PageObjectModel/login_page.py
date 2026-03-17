@@ -14,7 +14,7 @@ class LoginPage:
         )
 
 
-
+        #Methods section - where the actions take place
     def navigate_to_homepage(self):
         self.page.goto("https://bookcart.azurewebsites.net/")
         self.login_button_home.wait_for(state="visible", timeout=15000)
